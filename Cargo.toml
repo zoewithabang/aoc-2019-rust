@@ -1,0 +1,18 @@
+[package]
+name = "aoc_2019"
+version = "0.1.0"
+authors = ["zoewithabang <zoewithabang@gmail.com>"]
+edition = "2018"
+license = "MIT OR Apache-2.0"
+
+[dependencies]
+anyhow = "1.0.25"
+structopt = "0.3.5"
+thiserror = "1.0.9"
+
+[dev-dependencies]
+criterion = "0.3"
+
+[[bench]]
+name = "benchmark"
+harness = false
