@@ -53,14 +53,6 @@ impl Day3 {
         let input =
             fs::read_to_string("res/day3.txt").map_err(|_| CommonError::InputReadError(3))?;
 
-        // let input =
-        //     "R98,U47,R26,D63,R33,U87,L62,D20,R33,U53,R51\nU98,R91,D20,R16,D67,R40,U7,R15,U6,R7"
-        //         .to_string();
-
-        //let input = "R1,U1\nU1,R1,U1,D1,U1,D1".to_string();
-
-        //let input = "D1,R5,L4,U2\nU1,R1,D4,U3".to_string();
-
         Ok(Day3 { input })
     }
 }

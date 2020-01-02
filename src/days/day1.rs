@@ -33,25 +33,24 @@ impl Day for Day1 {
     }
 
     fn part2(&self) -> Result<String> {
-        let mut total_fuel = 0;
-
-        parse_input_to_masses(&self.input)?
+        let total_fuel = parse_input_to_masses(&self.input)?
             .into_iter()
             .map(|mass| (mass / 3) - 2)
-            .for_each(|fuel| {
-                total_fuel += fuel;
+            .map(|fuel| {
+                let mut total_fuel = fuel;
                 let mut mass = fuel;
 
                 loop {
                     mass = (mass / 3).checked_sub(2).unwrap_or(0);
 
                     if mass == 0 {
-                        break;
+                        break total_fuel;
                     }
 
                     total_fuel += mass;
                 }
-            });
+            })
+            .sum::<u32>();
 
         Ok(format!("{}", total_fuel))
     }
